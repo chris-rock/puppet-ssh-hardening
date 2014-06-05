@@ -1,0 +1,14 @@
+image: ruby1.9.3
+script:
+  - ruby --version
+  - rvm --version
+  - gem --version
+  - sudo apt-get install -y libxslt-dev libxml2-dev
+  - gem install bundler
+  - bundle --version
+  - bundle install
+  - bundle exec rake lint
+notify:
+  email:
+    recipients:
+      - chris@lollyrock.com
